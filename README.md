@@ -1,2 +1,2 @@
 # DHCont
-The results of EORSSD and ORSSD can be seen in this link:
+The results of EORSSD and ORSSD can be seen in "results.zip".
