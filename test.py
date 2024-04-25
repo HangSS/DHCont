@@ -11,7 +11,6 @@ class test_dataloader:
         self.gts = [gt_root + f for f in os.listdir(gt_root) if f.endswith('.jpg')
                        or f.endswith('.png')]
         self.salmap = sorted(self.salmap)
-        # self.depths = sorted(self.depths)
         self.gts = sorted(self.gts)
         self.size = len(self.salmap)
         self.index = 0
@@ -31,13 +30,10 @@ class test_dataloader:
             return img.convert('L')
 
 
-dataset_path = 'D:/MODULE/dataset/'
+dataset_path = your_dataset_path
 test_datasets = ['EORSSD', 'ORSSD']
-salmap_root = 'D:/MODULE/result/Maps/Final_DHCont_MCCNet/'  # 'D:/MODULE/result/Maps/Final_DHCont_ACCoNet/'
+salmap_root = your_resluts_path
 for dataset in test_datasets:
-    save_path = './results/VGG/' + dataset + '/'
-    if not os.path.exists(save_path):
-        os.makedirs(save_path)
     print(dataset)
     gt_root = dataset_path + dataset + '/test-labels/'
     test_loader = test_dataloader(salmap_root + dataset + '/', gt_root)
